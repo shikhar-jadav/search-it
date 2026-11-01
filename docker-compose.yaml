@@ -1,0 +1,14 @@
+services:
+  search-it:
+    image: shikharjadav/search-it:latest
+    build:
+      context: .
+    ports:
+      - '3000:3000'
+    volumes:
+      - data:/home/search-it/data
+    restart: unless-stopped
+
+volumes:
+  data:
+    name: 'search-it-data'
